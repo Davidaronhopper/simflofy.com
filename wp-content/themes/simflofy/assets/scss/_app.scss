@@ -1,0 +1,22 @@
+/*!
+Theme Name: Simflofy
+Author: Simflofy
+Description:
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+*/
+
+@import "layouts/normalize"; 
+@import "config/variables";
+@import "config/mixins";
+@import "config/typography";
+@import "config/forms";
+@import "layouts/base";
+@import "layouts/header";
+@import "layouts/nav";
+@import "layouts/content";
+@import "layouts/pages/home";
+@import "layouts/footer";
+@import "layouts/accessibility";
+

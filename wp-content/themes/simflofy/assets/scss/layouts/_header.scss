@@ -1,0 +1,20 @@
+header {
+  background:$white;
+  height:134px;
+  width:100%;
+  position:fixed;
+  top:0;
+  .container {
+    height:128px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content: space-between;
+    #logo {
+      width:300px;
+      height:95px;
+    }
+
+  }
+  
+}

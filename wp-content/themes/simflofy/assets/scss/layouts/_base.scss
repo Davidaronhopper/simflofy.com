@@ -1,0 +1,53 @@
+
+
+body {
+  * {
+    transition: .3s ease all;
+  }
+  letter-spacing:.5pt;
+  font-family:$body;
+  color:$black;
+  .container {
+    width:90%;
+    //height:100%;
+    margin:0 auto;
+    @include respond-to('xl-desktop'){
+      width:1400px;
+    }
+  }
+
+  .btn {
+    @extend %btnstyle;
+  }
+}
+
+%btnstyle {
+    background:$blue;
+    padding:10px 25px 10px 15px;
+    border-radius:20px;
+    color:$white;
+    font-size:13px;
+    text-transform:uppercase;
+    width:auto;
+    text-decoration:none;
+    position:relative;
+    font-weight:100;
+    &:hover {
+      opacity:0.8;
+      border-bottom:0;
+      &:after {
+        right:8px;
+      }
+    }
+    &:after {
+      width:7px;
+      height:12px;
+      content: " ";
+      background:url('assets/img/btn_arrow.png');
+      position:absolute;
+      right:11px;
+      top:12px;
+      transition:.3s ease all;
+    }
+
+}

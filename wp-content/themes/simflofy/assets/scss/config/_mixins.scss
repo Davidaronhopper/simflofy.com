@@ -1,0 +1,21 @@
+$breakpoints: (
+  'tiny-phone'  : ( min-width:  420px ),
+  'xs-mobile'  : ( min-width:  550px ),
+  'mobile'  : ( min-width:  767px ),
+  's-tablet' : ( min-width:  850px ),
+  'tablet' : ( min-width:  1020px ),
+  'xl-tablet' : ( min-width:  1100px ),
+  'desktop'  : ( min-width: 1200px ),
+  'xl-desktop'  : ( min-width: 1500px ),
+  'xl-desktopplus'  : ( min-width: 1600px ),
+  'xxl-desktop'  : ( min-width: 2000px )
+);
+ 
+@mixin respond-to($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+}

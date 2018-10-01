@@ -1,0 +1,63 @@
+.gform_wrapper {
+  .gform_body {
+    ul {
+      li {
+        input, textarea {
+          width:100%;
+          padding:10px !important;
+          //border:1px solid $grey;
+          transition:.3s ease border;
+          &:hover {
+            //border:1px solid $cayred;
+          }
+          &:focus {
+            outline:none;
+          }
+        }
+      }
+    }
+  }
+  .gform_footer {
+    input.gform_button {
+      display:block;
+      padding:15px 30px;
+      color:$white;
+      //background:$cayred;
+      transition:.3s ease opacity;
+      &:hover {
+        opacity:.7;
+      }
+    }
+  }
+  .prettydropdown {
+    ul {
+      //border:1px solid $grey;
+      transition:.3s ease border;
+      &:hover {
+        //border:1px solid $cayred;
+      }
+      &:focus {
+        outline:none;
+      }
+    }
+  }
+  .validation_error {
+    //color:$cayred !important;
+    //border-top:2px solid $cayred !important;
+    //border-bottom:2px solid $cayred !important;
+  }
+  .validation_message {
+    //color:$cayred !important;
+  }
+  .gfield_error {
+    background:none !important;
+    border-top:none !important;
+    border-bottom:none !important;
+    label {
+      color:$black !important;
+    }
+    input, textarea {
+      //border:1px solid $cayred !important;
+    }
+  }
+}
