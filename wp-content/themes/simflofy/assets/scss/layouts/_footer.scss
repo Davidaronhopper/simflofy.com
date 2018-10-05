@@ -10,24 +10,67 @@ footer {
   	flex-wrap:wrap;
   	justify-content:center;
   	.copy {
-		width:50%;
+		width:100%;
+		margin-bottom:20px;
+		text-align:center;
+		@include respond-to('tablet'){
+	  		width:30%;
+	  		margin-bottom:0;
+	  		text-align:left;
+	  	}
 	}
 	nav {
-	  	width:50%;
+	  	width:100%;
+	  	@include respond-to('tablet'){
+			width:70%;
+	  	}
 	  	a {
 	  		color:$white;
 	  		font-size:16px;
+	  		position:relative;
 	  		&:hover {
 	  			color:$white !important;
+	  			&:before {
+                  right: 0%;
+                }
 	  		}
+	  		&:before {
+              content: "";
+              position: absolute;
+              z-index: 0;
+              left: 0%;
+              right: 100%;
+              bottom: -2px;
+              background: $white;
+              height: 2px;
+              transition-property: left, right;
+              transition-duration: 0.3s;
+              transition-timing-function: ease-out;
+            }
 	  	}
 	  	.menu-main-nav-container {
 	  		margin-bottom:20px;
 	  		display:flex;
-	  		justify-content:flex-end;
+	  		justify-content:center;
+	  		@include respond-to('tablet'){
+	  			justify-content:flex-end;
+	  		}
 	  		ul {
+	  			display:flex;
+		  		justify-content:center;
+		  		@include respond-to('tablet'){
+		  			justify-content:flex-end;
+
+		  		}
 	  			li {
 	  				padding:0 10px;
+					
+					&.button {
+							margin-top:20px;
+							@include respond-to('tablet'){
+								margin-top:0;
+							}
+						}
 	  			}
 	  		}
 	  		.button {
@@ -42,7 +85,19 @@ footer {
 	  		}
 	  	}
 	  	.menu-secondary-menu-container {
+	  		margin-top:40px;
+	  		display:flex;
+	  		justify-content:center;
+	  		@include respond-to('tablet'){
+	  			justify-content:flex-end;
+	  			margin-top:0px;
+	  		}
 	  		ul {
+	  			display:flex;
+		  		justify-content:center;
+		  		@include respond-to('tablet'){
+		  			justify-content:flex-end;
+		  		}
 	  			li {
 	  				padding:0 10px;
 	  			}
@@ -54,6 +109,7 @@ footer {
 	}
 	.meta {
 		margin-top:50px;
+		text-align:center;
 		ul {
 			display:flex;
 			flex-wrap:wrap;
@@ -71,7 +127,26 @@ footer {
 		}
 		a.tel {
 			width:100%;
-			color:$white !important;	
+			color:$white !important;
+			position:relative;
+    &:hover {
+      &:before {
+        right: 0%;
+      }
+    }
+    &:before {
+              content: "";
+              position: absolute;
+              z-index: 0;
+              left: 0%;
+              right: 100%;
+              bottom: 0;
+              background: $white;
+              height: 2px;
+              transition-property: left, right;
+              transition-duration: 0.3s;
+              transition-timing-function: ease-out;
+            }	
 		}
 	}
   }

@@ -1,4 +1,8 @@
-
+html, body {
+  &.covered {
+    overflow:hidden;
+  }
+}
 
 body {
   * {
@@ -19,9 +23,25 @@ body {
   a {
     color:$blue;
     text-decoration:none;
+    position:relative;
     &:hover {
-      text-decoration:underline;
+      &:before {
+        right: 0%;
+      }
     }
+    &:before {
+              content: "";
+              position: absolute;
+              z-index: 0;
+              left: 0%;
+              right: 100%;
+              bottom: 0;
+              background: $blue;
+              height: 2px;
+              transition-property: left, right;
+              transition-duration: 0.3s;
+              transition-timing-function: ease-out;
+            }
   }
   .btn {
     @extend %btnstyle;
@@ -51,6 +71,9 @@ body {
         right:8px;
       }
     }
+    &:before {
+      display:none;
+    }
     &:after {
       width:7px;
       height:12px;
@@ -61,5 +84,44 @@ body {
       top:12px;
       transition:.3s ease all;
     }
-
 }
+
+.icons {
+    max-width:445px;
+    margin:0 auto 20px;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    li {
+      display:block;
+      list-style:none;
+      width:50%; 
+      a {
+        text-align:center;
+        text-decoration: none;
+        font-size:18px;
+        text-transform:uppercase;
+        img {
+          display:block;
+          margin:0 auto 10px;
+        }
+        h3 {
+          width:100%;
+          margin:auto 0;
+          font-size:17px;
+          color:$blue;
+          height:40px;
+          line-height:40px;
+          display:block;
+          text-align:center;
+          &.double {
+            line-height:20px;
+          }
+        }
+      }
+      @include respond-to('mobile'){
+        width:33.333% !important;
+      }
+    }
+  }
+

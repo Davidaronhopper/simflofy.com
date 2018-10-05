@@ -1,63 +1,41 @@
-.gform_wrapper {
-  .gform_body {
-    ul {
-      li {
-        input, textarea {
-          width:100%;
-          padding:10px !important;
-          //border:1px solid $grey;
-          transition:.3s ease border;
-          &:hover {
-            //border:1px solid $cayred;
-          }
-          &:focus {
-            outline:none;
-          }
-        }
-      }
-    }
-  }
-  .gform_footer {
-    input.gform_button {
-      display:block;
-      padding:15px 30px;
-      color:$white;
-      //background:$cayred;
-      transition:.3s ease opacity;
-      &:hover {
-        opacity:.7;
-      }
-    }
-  }
-  .prettydropdown {
-    ul {
-      //border:1px solid $grey;
-      transition:.3s ease border;
-      &:hover {
-        //border:1px solid $cayred;
-      }
-      &:focus {
+form {
+    .wpcf7-text {
+                outline:none;
+                padding:9px 10px;
+                font-size:15px;
+                &:focus {
+                    border:2px solid $orange;
+                }
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: $grey;
+                    opacity: 1; /* Firefox */
+                }
+
+                &::-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: $grey;
+                }
+
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: $grey;
+                }
+            }
+    .wpcf7-submit {
         outline:none;
-      }
+        @extend %btnstyle;
     }
-  }
-  .validation_error {
-    //color:$cayred !important;
-    //border-top:2px solid $cayred !important;
-    //border-bottom:2px solid $cayred !important;
-  }
-  .validation_message {
-    //color:$cayred !important;
-  }
-  .gfield_error {
-    background:none !important;
-    border-top:none !important;
-    border-bottom:none !important;
-    label {
-      color:$black !important;
+    span.wpcf7-not-valid-tip {
+        font-size:15px;
+        color:$warning;
+        padding:5px 0 0 10px;
     }
-    input, textarea {
-      //border:1px solid $cayred !important;
+    .wpcf7-validation-errors {
+        display:none !important;
+        width:70%;
+        margin: 0 auto;
+        border: none !important;
+        color:$warning;
+        text-align:center;
+        text-transform:uppercase;
+        font-size:16px;
     }
-  }
 }

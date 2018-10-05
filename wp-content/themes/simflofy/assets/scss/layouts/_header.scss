@@ -1,21 +1,48 @@
 header {
   background:$white;
-  height:134px;
+  height:100px;
   width:100%;
   position:fixed;
   top:0;
-  z-index:100;
+  z-index:1001;
   .container {
-    height:128px;
+    height:100px;
     display:flex;
     flex-wrap:wrap;
     align-items:center;
     justify-content: space-between;
     #logo {
-      width:300px;
-      height:95px;
+      width:200px;
+      height:auto;
+      @include respond-to('xl-tablet'){
+        width:300px;
+      }
+      &:hover {
+        &:before {
+          display:none;
+        }
+      }
     }
-
   }
-  
+  @include respond-to('xl-tablet'){
+    height:134px;
+    .container {
+      height:134px;
+    }
+  }
+}
+
+.hamburger {
+    outline:none !important;
+    
+    //z-index:1001;
+    top:45px;
+    right:35px;
+    display:block;
+    @include respond-to('tablet'){
+      display:none !important;
+    }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      background-color:$blue;
+    }
 }

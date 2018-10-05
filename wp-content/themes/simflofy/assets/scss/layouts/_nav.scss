@@ -7,16 +7,37 @@ nav {
         li {
           list-style:none;
           margin:0;
-          padding:0 20px;
+          padding:0 10px;
+          @include respond-to('xl-tablet'){
+            padding:0 20px;
+          }
           a {
             text-decoration:none;
             color:$black;
             text-transform:uppercase;
             font-weight:100;
             font-size:21px;
+            position:relative;
             &:hover {
                 color:$blue;
+                text-decoration:none !important;
+                &:before {
+                  right: 0%;
+                }
               }
+            &:before {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              left: 0%;
+              right: 100%;
+              bottom: 0;
+              background: $blue;
+              height: 2px;
+              transition-property: left, right;
+              transition-duration: 0.3s;
+              transition-timing-function: ease-out;
+            }
           }
           &.button {
             a {
@@ -31,14 +52,89 @@ nav {
           li {
             padding:0 15px;
             a {
-              font-size:14px;
+              font-size:14px !important;
             }
           }
         }
       }
-  .menu-secondary-menu-container {
-    display:flex;
-    justify-content:flex-end;
-    margin:0 0 23px 0;
+  .menu-main-nav-container {
+    display:none;
+    @include respond-to('tablet'){
+      display:block;
+    }
   }
+  .menu-secondary-menu-container {
+    display:none;
+     @include respond-to('tablet'){
+      display:flex;
+      justify-content:flex-end;
+      margin:0 0 23px 0;
+    }
+    li {
+      a {
+        font-size:14px;
+      }
+    }
+  }
+}
+
+#mobmenu {
+    position:fixed;
+    background:$white;
+    height:100%;
+   //margin-top:138px;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    visibility:hidden;  
+    opacity:0;
+    transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    &.is-active {
+        visibility:visible;
+        opacity:1;
+        transition-delay:0s;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        @include respond-to('tablet'){
+          visibility:hidden;
+          opacity:0;
+          
+        }
+    }
+    .container {
+      padding-top:100px;
+      min-height:600px;
+      .icons {
+      li {
+        margin:0 auto 15px;
+        width:50%;
+        @include respond-to('xs-mobile'){  
+        }
+      }
+    }
+    .menu-secondary-menu-container {
+      ul {
+        padding:0;
+        margin:0;
+        li {
+          list-style:none;
+          width:100%;
+          text-align:center;
+          margin-bottom:20px;
+          a {
+            text-transform:uppercase;
+            color:$black;
+            font-size:21px;
+
+          }
+        }
+      }
+    }
+    }
+
+
 }

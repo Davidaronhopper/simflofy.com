@@ -11,26 +11,47 @@
 		display:flex;
 		flex-wrap:wrap;
 		.text {
-			width:50%;
-			padding:100px 0;
+			order:2;
+			width:100%;
+			padding:50px 0;
+			@include respond-to('xl-tablet'){
+				padding:100px 0;
+			}
 			h1 {
 				padding:0 50px 0 0;
 				color:$blue;
-				font-size:70px;
+				font-size:60px;
 				text-transform:uppercase;
 				font-weight:100;
-				line-height:80px;
+				line-height:70px;
+				@include respond-to('xl-tablet'){
+					font-size:70px;
+					line-height:80px;
+				}
 			}
 			p {	
 				padding:0 50px 0 0;
-				font-size:20px;
-				line-height:30px;
+				font-size:18px;
+					line-height:27px;
+				@include respond-to('xl-tablet'){
+					font-size:20px;
+					line-height:30px;
+				}
+			}
+			@include respond-to('s-tablet'){
+				width:50%;
+				order:1;
 			}
 		}
 		.img {
-			width:50%;
+			order:1;
+			width:100%;
 			height:500px;
 			background:#e7e7e7;
+			@include respond-to('s-tablet'){
+				width:50%;
+				order:2;
+			}
 		}
 	}
 	h2 {
@@ -41,43 +62,15 @@
 		font-size:21px;
 		margin-bottom:38px;
 	}
-	ul {
-		max-width:445px;
-		margin:0 auto 20px;
-		padding:0;
-		display:flex;
-		flex:wrap;
-		li {
-			display:block;
-			list-style:none;
-			width:33.333%;
-			a {
-				text-align:center;
-				text-decoration: none;
-				font-size:18px;
-				text-transform:uppercase;
-				img {
-					display:block;
-					margin:0 auto 10px;
-				}
-				h3 {
-					width:100%;
-					margin:auto 0;
-					font-size:17px;
-					color:$blue;
-					height:40px;
-					line-height:40px;
-					display:block;
-					text-align:center;
-					&.double {
-						line-height:20px;
-					}
-				}
-			}
-		}
+
+	.icons {
+		justify-content:center;
 	}
 	
+	
 }
+
+
 
 #casestudy, #newsletter, #how, #blog {
 	
@@ -114,15 +107,37 @@
 
 #newsletter {
 	padding:30px 0;
+	margin-bottom:60px;
 	background:$background;
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
 	p {
+		margin:0 0 30px 0;
 		font-size:15px;
 		display:block;
 		max-width:450px;
 		text-align:center;
+	}
+	.form {
+		width:100%;
+		form {
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:center;
+			.name, .email, p {
+				margin:0 10px 20px;;
+				width:100%;
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:center;
+				@include respond-to('tablet'){
+					width:auto;
+				}
+				
+			}
+
+		}
 	}
 }
 
@@ -138,8 +153,8 @@
 		display:flex;
 		flex-wrap:wrap;
 		.text {
-			width:calc(50% - 40px);
-			padding-left:40px;
+			width:100%;
+			padding:0 10px;
 			h3 {
 				color:$blue;
 				font-size:30px;
@@ -171,28 +186,43 @@
 				}
 			}
 			.readmore {
-				color:$blue; 
-				font-size:15px;
-				padding:0 0 0 10px;
-				text-decoration:none;
-				&:hover {
-					text-decoration:underline;
+					display:block; 
+					margin:20px 0 0 0;
+					@include respond-to('s-tablet'){
+						display:inline; 
+						margin:0 0 0 10px;
+					}
+					a {
+						color:$blue; 
+						font-size:15px;
+						text-decoration:none;
+					}
+					
 				}
+			
+			@include respond-to('s-tablet'){
+				width:calc(50% - 40px);
+				padding:0 0 0 40px;
 			}
 		}
 		.img {
-			width:50%;
+			width:100%;
 			height:500px;
 			background:$blue;
+			@include respond-to('s-tablet'){
+				width:50%;
+			}
 		}
 		&.migration {
-			.text {
-				order:1;
-				padding-left:0px;
-				padding-right:40px;
-			}
-			.img {
-				order:2;
+			@include respond-to('s-tablet'){
+				.text {
+					order:1;
+					padding-left:0px;
+					padding-right:40px;
+				}
+				.img {
+					order:2;
+				}
 			}
 		}
 	}
@@ -216,8 +246,8 @@
 		flex-wrap:wrap;
 
 		.col {
-			width:calc(33.333% - 40px);
-			margin:0 20px;
+			width:100%;
+			margin:0 0 40px 0;
 			h4 {
 				color:$blue;
 				font-size:18px;
@@ -233,6 +263,10 @@
 			a {
 				
 				font-size:15px;
+			}
+			@include respond-to('tablet'){
+				width:calc(33.333% - 40px);
+				margin:0 20px;
 			}
 		}
 	}

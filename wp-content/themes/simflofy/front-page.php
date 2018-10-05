@@ -2,31 +2,11 @@
 <section id="lead">
 	<div class="container">
 		<div class="text">
-			<h1>Unlock your siloed cotent</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Sed id consectetur nisi, sed laoreet ante. Vestibulum 
-			vestibulum hendrerit libero.</p>
-			<h2>How we do it</h2>
-			<ul>
-				<li>
-					<a href="#">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_circle.png">
-						<h3>Federation</h3>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_circle.png">
-						<h3>Migration</h3>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_circle.png">
-						<h3 class="double">Manage in Place</h3>
-					</a>
-				</li>
-			</ul>
+			<?php if( have_rows('lead') ): while ( have_rows('lead') ) : the_row(); ?>
+				<h1><?php the_sub_field('title'); ?></h1>
+				<p><?php the_sub_field('text'); ?></h2>
+			<?php endwhile; endif; ?>
+			<?php get_template_part( 'parts/content', 'block-navicons' ); ?>
 			<div class="cta"><a href="#" class="btn">Request a Demo</a></div>
 		</div>
 		<div class="img"></div>
@@ -74,6 +54,7 @@
 		<p>
 			Stay up-to-date with all things Simflofy. Product updates, educational resources and events. You can unsubscribe at anytime. 
 		</p>
+		<div class="form"><?php echo do_shortcode('[contact-form-7 id="15" title="Newsletter Signup"]'); ?></div>
 	</section>
 	<section id="how">
 		<h2>How we break down content silos</h2>
@@ -88,7 +69,7 @@
 					<li>Value Prop</li>
 				</ul>
 				<a href="#" class="btn">Learn More</a>
-				<a href="#" class="readmore">Read our case study on how we helped</a>
+				<div class="readmore"><a href="#">Read our case study on how we helped</a></div>
 			</div>
 		</div>
 		<div class="block migration">
@@ -102,7 +83,7 @@
 					<li>Value Prop</li>
 				</ul>
 				<a href="#" class="btn">Learn More</a>
-				<a href="#" class="readmore">Read our case study on how we helped</a>
+				<div class="readmore"><a href="#">Read our case study on how we helped</a></div>
 			</div>
 		</div>
 		<div class="block mip">
@@ -116,7 +97,7 @@
 					<li>Value Prop</li>
 				</ul>
 				<a href="#" class="btn">Learn More</a>
-				<a href="#" class="readmore">Read our case study on how we helped</a>
+				<div class="readmore"><a href="#">Read our case study on how we helped</a></div>
 			</div>
 		</div>
 	</section>
@@ -124,21 +105,32 @@
 		<h2>Simflofy Blog</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id consectetur nisi, sed laoreet ante. Vestibulum vestibulum hendrerit libero.</p>
 		<div class="stories">
-			<div class="col">
-				<h4>Blog Title Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id consectetur nisi, sed laoreet ante. Vestibulum vestibulum hendrerit libero. </p>
-				<a href="#">Read More</a>
-			</div>
-			<div class="col">
-				<h4>Blog Title</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id consectetur nisi, sed laoreet ante. Vestibulum vestibulum hendrerit libero. </p>
-				<a href="#">Read More</a>
-			</div>
-			<div class="col">
-				<h4>Blog Title</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id consectetur nisi, sed laoreet ante. Vestibulum vestibulum hendrerit libero. </p>
-				<a href="#">Read More</a>
-			</div>
+
+
+
+<?php
+
+   $args = array(
+   	'cat' => 4,
+   	'posts_per_page' => 3
+   );
+   $category_posts = new WP_Query($args);
+
+   if($category_posts->have_posts()) : 
+      while($category_posts->have_posts()) : 
+         $category_posts->the_post();
+		?>
+         <div class="col">
+			<h4><?php the_title() ?></h4>
+			<p><?php the_excerpt() ?></p>
+			<a href="<?php get_permalink() ?>">Read More</a>
+		</div>      
+
+		<?php endwhile; else: ?>
+			Oops, there are no posts.
+<?php endif; ?>
+
+
 		</div>
 		<div class="cta"><a href="#" class="btn">Read All Posts</a></div>
 	</section>
