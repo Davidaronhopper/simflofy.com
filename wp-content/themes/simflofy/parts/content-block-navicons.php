@@ -26,7 +26,7 @@
 
           <a href="<?php the_sub_field('link'); ?>">
             <img src="<?php the_sub_field('icon'); ?>">
-            <h3><?php the_sub_field('title'); ?></h3>
+            <h3 class="double"><?php the_sub_field('title'); ?></h3>
           </a>
           <?php endwhile; endif; ?>
         </li>

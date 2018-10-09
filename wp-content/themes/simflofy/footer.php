@@ -1,5 +1,5 @@
 <?php wp_footer(); ?>
-</div>
+</section>
 <footer>
 	<div class="container">
   <div class="copy">COPYRIGHT &copy; 2018. All RIGHTS RESERVED</div>

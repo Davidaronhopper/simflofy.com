@@ -1,0 +1,40 @@
+.page-template-page-featured {
+	#main {
+		.content {
+			margin:50px 0 100px;
+			.header {
+				width:100%;
+				padding-bottom:50px;
+				background: #eeeeee; /* Old browsers */
+			    background: -webkit-linear-gradient(#ffffff 0%, #eeeeee 100%);
+			    background: -o-linear-gradient(#ffffff 0%, #eeeeee 100%);
+			    background: linear-gradient(#ffffff 0%, #eeeeee 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+				.container {
+					display:flex;
+					flex-wrap:wrap;
+					align-items:center;
+					.title {
+						width:80%;
+						h1 {
+							color:$blue;
+							font-size:60px;
+						}
+						h2 {
+							max-width:500px;
+							text-transform:none;
+						}
+					}
+					.img{
+						width:20%;
+						height:200px;
+						background:$blue;
+					}
+				}
+				
+			}
+		}
+		
+	}
+	
+}

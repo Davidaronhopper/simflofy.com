@@ -397,6 +397,7 @@ h1, h2, h3, h4, h5 {
 }
 
 form .wpcf7-text {
+  border-radius: 0;
   outline: none;
   padding: 9px 10px;
   font-size: 15px;
@@ -560,6 +561,10 @@ nav ul li.button a:after, form .wpcf7-submit:after, body .btn:after {
   }
 }
 
+#main {
+  padding-top: 138px;
+}
+
 header {
   background: #fff;
   height: 100px;
@@ -715,7 +720,7 @@ nav .menu-secondary-menu-container li a {
   }
 }
 #mobmenu .container {
-  padding-top: 100px;
+  padding-top: 200px;
   min-height: 600px;
 }
 #mobmenu .container .icons li {
@@ -741,7 +746,6 @@ nav .menu-secondary-menu-container li a {
 #lead {
   width: 100%;
   min-height: 500px;
-  padding-top: 138px;
   background: #eeeeee;
   /* Old browsers */
   background: -webkit-linear-gradient(#ffffff 0%, #eeeeee 100%);
@@ -1015,6 +1019,76 @@ nav .menu-secondary-menu-container li a {
     width: calc(33.333% - 40px);
     margin: 0 20px;
   }
+}
+
+.page-template-page-featured #main .content {
+  margin: 50px 0 100px;
+}
+.page-template-page-featured #main .content .header {
+  width: 100%;
+  padding-bottom: 50px;
+  background: #eeeeee;
+  /* Old browsers */
+  background: -webkit-linear-gradient(#ffffff 0%, #eeeeee 100%);
+  background: -o-linear-gradient(#ffffff 0%, #eeeeee 100%);
+  background: linear-gradient(#ffffff 0%, #eeeeee 100%);
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#eeeeee",GradientType=0 );
+  /* IE6-9 */
+}
+.page-template-page-featured #main .content .header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page-template-page-featured #main .content .header .container .title {
+  width: 80%;
+}
+.page-template-page-featured #main .content .header .container .title h1 {
+  color: #176ea2;
+  font-size: 60px;
+}
+.page-template-page-featured #main .content .header .container .title h2 {
+  max-width: 500px;
+  text-transform: none;
+}
+.page-template-page-featured #main .content .header .container .img {
+  width: 20%;
+  height: 200px;
+  background: #176ea2;
+}
+
+.page-template-page-standard .header {
+  width: 100%;
+  padding: 50px 0 100px 0;
+  text-align: center;
+}
+.page-template-page-standard .header h1 {
+  color: #176ea2;
+  font-size: 60px;
+}
+.page-template-page-standard .content {
+  padding-bottom: 100px;
+}
+
+.page-template-page-contact .header {
+  width: 100%;
+  padding: 50px 0 100px 0;
+  text-align: center;
+}
+.page-template-page-contact .header h1 {
+  color: #176ea2;
+  font-size: 60px;
+}
+.page-template-page-contact .content {
+  padding-bottom: 100px;
+}
+.page-template-page-contact .content .container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 footer {
